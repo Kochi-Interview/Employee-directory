@@ -10,6 +10,7 @@ import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -88,8 +89,8 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public Cursor searchEmployee(String query) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res =  db.rawQuery( "select * from "+ EMPLOYEE_TABLE_NAME +" where "+EMPLOYEE_COLUMN_NAME+" = '"
-                +query+"' OR "+EMPLOYEE_COLUMN_EMAIL+" = '"+query+"'", null );
+        Cursor res =  db.rawQuery( "select * from "+ EMPLOYEE_TABLE_NAME +" where "+EMPLOYEE_COLUMN_NAME+" like '%"
+                +query+"%' OR "+EMPLOYEE_COLUMN_EMAIL+" like '%"+query+"%'", null );
         return res;
     }
     public Employee getEmployee(String query){
@@ -97,13 +98,27 @@ public class DBHelper extends SQLiteOpenHelper {
         Cursor rs = searchEmployee(query);
 
         rs.moveToFirst();
+        String more=null;
 
         try {
-            employee.setData(new JSONObject(rs.getString(rs.getColumnIndex(DBHelper.EMPLOYEE_COLUMN_MORE))));
-            return  employee;
-        } catch (JSONException e) {
-            e.printStackTrace();
+            more = rs.getString(rs.getColumnIndex(DBHelper.EMPLOYEE_COLUMN_NAME));
+        }catch (Exception e){
+            Log.e("error",e.getMessage()+"");
         }
+        if(more==null){
+
+
+        }else{
+            try {
+                employee.setData(new JSONObject(more));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        if (!rs.isClosed())  {
+            rs.close();
+        }
+
         return  employee;
 
     }
