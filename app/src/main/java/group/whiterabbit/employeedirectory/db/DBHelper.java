@@ -7,6 +7,7 @@ import java.util.HashMap;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.CursorIndexOutOfBoundsException;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase;
@@ -134,6 +135,8 @@ public class DBHelper extends SQLiteOpenHelper {
             return  employee;
         } catch (JSONException e) {
             e.printStackTrace();
+        }catch (CursorIndexOutOfBoundsException e){
+
         }
         return  employee;
 
