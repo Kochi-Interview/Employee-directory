@@ -61,6 +61,11 @@ public class EmployeeDetailsPage extends AppCompatActivity {
 
         bsLabel = findViewById(R.id.company_data_layout).findViewById(R.id.filed3).findViewById(R.id.label);
         bsValue = findViewById(R.id.company_data_layout).findViewById(R.id.filed3).findViewById(R.id.value);
+
+        findViewById(R.id.company_data_layout).findViewById(R.id.filed4).findViewById(R.id.value).setVisibility(View.GONE);
+        findViewById(R.id.company_data_layout).findViewById(R.id.filed5).findViewById(R.id.value).setVisibility(View.GONE);
+        findViewById(R.id.company_data_layout).findViewById(R.id.filed4).findViewById(R.id.label).setVisibility(View.GONE);
+        findViewById(R.id.company_data_layout).findViewById(R.id.filed5).findViewById(R.id.label).setVisibility(View.GONE);
     }
 
     private void setBaseDataUi() {

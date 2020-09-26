@@ -102,8 +102,9 @@ public class DBHelper extends SQLiteOpenHelper {
 
         try {
             more = rs.getString(rs.getColumnIndex(DBHelper.EMPLOYEE_COLUMN_NAME));
+            Log.e("error_more_e",more);
         }catch (Exception e){
-            Log.e("error",e.getMessage()+"");
+            Log.e("error_more",e.getMessage()+"");
         }
         if(more==null){
 
