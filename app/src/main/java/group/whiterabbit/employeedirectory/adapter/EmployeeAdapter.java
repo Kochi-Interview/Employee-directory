@@ -72,7 +72,8 @@ public class EmployeeAdapter extends RecyclerView.Adapter<EmployeeAdapter.Employ
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              employeeCallBack.onClick(employeeList.get(position));
+
+              employeeCallBack.onClick(employeeList.get(position).getID());
             }
         });
     }

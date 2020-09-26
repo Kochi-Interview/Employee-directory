@@ -102,9 +102,11 @@ public class MainActivity extends AppCompatActivity implements EmployeeCallBack{
     }
 
     @Override
-    public void onClick(Employee employee) {
+    public void onClick(int employeeId) {
         Intent myIntent = new Intent(MainActivity.this, EmployeeDetailsPage.class);
-        myIntent.putExtra("employeeId", employee.getID()); //Optional parameters
+        myIntent.putExtra("employeeId",employeeId); //Optional parameters
         this.startActivity(myIntent);
     }
+
+    
 }

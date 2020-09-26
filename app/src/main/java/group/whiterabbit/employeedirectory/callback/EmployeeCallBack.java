@@ -7,5 +7,5 @@ import group.whiterabbit.employeedirectory.model.Employee;
 public interface EmployeeCallBack {
       void onSuccess(List<Employee> employeeList);
       void onFailed();
-      void onClick(Employee employee);
+      void onClick(int employeeId);
 }
