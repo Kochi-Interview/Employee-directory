@@ -29,8 +29,9 @@ public class EmployeeAdapter extends RecyclerView.Adapter<EmployeeAdapter.Employ
     public  EmployeeAdapter(EmployeeCallBack employeeCallBack){
         this.employeeCallBack=employeeCallBack;
     }
-    public EmployeeAdapter upDateData( List<Employee> employeeList){
-        this.employeeList=employeeList;
+    public EmployeeAdapter upDateData( List<Employee> employeeList1){
+        this.employeeList.clear();
+        this.employeeList.addAll(employeeList1);
         notifyDataSetChanged();
         return this;
     }

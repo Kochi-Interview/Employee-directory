@@ -46,8 +46,11 @@ public class MainActivity extends AppCompatActivity implements EmployeeCallBack{
                     List<Employee> newEmployeeList=new ArrayList<>();
                     Employee employee= searchEmployee.getEmployee(query);
                      if(employee!=null){
+                         newEmployeeList.clear();
                          newEmployeeList.add(employee);
                          mAdapter.upDateData(newEmployeeList);
+
+
                      }else{
                          Toast.makeText(MainActivity.this, "No Match found",Toast.LENGTH_LONG).show();
                      }

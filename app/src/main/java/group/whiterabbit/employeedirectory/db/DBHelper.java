@@ -89,8 +89,8 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public Cursor searchEmployee(String query) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res =  db.rawQuery( "select * from "+ EMPLOYEE_TABLE_NAME +" where "+EMPLOYEE_COLUMN_NAME+" like '%"
-                +query+"%' OR "+EMPLOYEE_COLUMN_EMAIL+" like '%"+query+"%'", null );
+        Cursor res =  db.rawQuery( "select * from "+ EMPLOYEE_TABLE_NAME +" where "+EMPLOYEE_COLUMN_NAME+" = '"
+                +query+"' OR "+EMPLOYEE_COLUMN_EMAIL+" = '"+query+"'", null );
         return res;
     }
     public Employee getEmployee(String query){
@@ -101,7 +101,7 @@ public class DBHelper extends SQLiteOpenHelper {
         String more=null;
 
         try {
-            more = rs.getString(rs.getColumnIndex(DBHelper.EMPLOYEE_COLUMN_NAME));
+            more = rs.getString(rs.getColumnIndex(DBHelper.EMPLOYEE_COLUMN_MORE));
             Log.e("error_more_e",more);
         }catch (Exception e){
             Log.e("error_more",e.getMessage()+"");
