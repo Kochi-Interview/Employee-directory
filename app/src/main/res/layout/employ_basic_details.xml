@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:layout_height="wrap_content">
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:id="@+id/employeeImage"
+        android:layout_height="wrap_content"></androidx.appcompat.widget.AppCompatImageView>
+    <include
+        app:layout_constraintStart_toEndOf="@id/employeeImage"
+        layout="@layout/filed"
+        android:id="@+id/filed1"
+        android:layout_width="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="wrap_content" />
+
+    <include
+        app:layout_constraintStart_toEndOf="@id/employeeImage"
+        layout="@layout/filed"
+        app:layout_constraintTop_toBottomOf="@id/filed1"
+        android:id="@+id/filed2"
+        android:layout_width="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="wrap_content" />
+
+    <include
+        app:layout_constraintStart_toEndOf="@id/employeeImage"
+        layout="@layout/filed"
+        app:layout_constraintTop_toBottomOf="@id/filed2"
+        android:id="@+id/filed3"
+        android:layout_width="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="wrap_content" />
+    <include
+        app:layout_constraintStart_toEndOf="@id/employeeImage"
+        layout="@layout/filed"
+        app:layout_constraintTop_toBottomOf="@id/filed3"
+        android:id="@+id/filed4"
+        android:layout_width="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="wrap_content" />
+    <include
+        app:layout_constraintStart_toEndOf="@id/employeeImage"
+        layout="@layout/filed"
+        app:layout_constraintTop_toBottomOf="@id/filed4"
+        android:id="@+id/filed5"
+        android:layout_width="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="wrap_content" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
